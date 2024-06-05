@@ -52,7 +52,7 @@ const handleLogin = async (data) => {
           <ErrorMessage name="password" />
         </div>
         <div class="flex justify-end items-center">
-          <button
+          <button 
             type="submit"
             class="bg-white p-2 px-10 rounded-md duration-300 hover:bg-gray-300"
           >

@@ -1,6 +1,7 @@
 <script setup>
 import { Form, Field } from 'vee-validate'
 import { registerSchema } from '@/utils/validate'
+
 </script>
 <template>
   <section class="grid justify-center items-center h-[100vh] text-center -mt-10">
@@ -8,7 +9,7 @@ import { registerSchema } from '@/utils/validate'
       <div class="text-3xl font-bold grid justify-center text-center gap-5 text-white">
         <img
           class="w-[150px] bg-white rounded-full p-5"
-          src="../../../public/icons/favicon.svg "
+          src="../../../public/icons/favicon.svg " 
           alt=""
         />
         <h2>Register</h2>
