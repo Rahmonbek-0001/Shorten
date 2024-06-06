@@ -31,31 +31,7 @@
   </header>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      p1Exists: false,
-      p2Exists: false
-    }
-  },
-  computed: {
-    btn1Text() {
-      if(this.p1Exists) {
-        return 'Remove';
-      }
-      else {
-        return 'Add';
-      }
-    },
-    btn2Text() {
-      if(this.p2Exists) {
-        return 'Remove';
-      }
-      else {
-        return 'Add';
-      }
-    }
-  }
-}
+<script setup>
+import { ref } from 'vue';
+let toggle = ref(true)
 </script>

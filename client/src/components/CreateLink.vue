@@ -6,15 +6,17 @@
       <h2 class="text-3xl font-semibold text-white">Generate short link</h2>
       <div class="flex w-[550px]">
         <input
-          class="text-xl w-3/4 p-1 px-5 outline-none rounded-tl-xl rounded-bl-xl"
+          class="text-xl w-3/4 p-1 h-10 px-5 outline-none rounded-tl-xl rounded-bl-xl"
           type="text"
           placeholder="Enter link"
         />
-        <button
-          class="w-[150px] text-2xl bg-gray-800 hover:bg-gray-500 duration-1000 text-white rounded-tr-xl rounded-br-xl"
+        <router-link to="/" class="h-10"
+          ><button
+            class="w-[150px] text-2xl h-full bg-gray-800 hover:bg-gray-500 duration-1000 text-white rounded-tr-xl rounded-br-xl"
+          >
+            Generate
+          </button></router-link
         >
-          Generate
-        </button>
       </div>
     </div>
     <router-link
