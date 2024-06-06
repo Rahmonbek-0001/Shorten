@@ -2,7 +2,7 @@
 <script setup></script>
 <template>
   <div class="flex justify-center mt-10">
-    <div class="bg-gray-600 p-3 text-white flex justify-around items-center mt-10 w-[1200px]">
+    <div class="bg-cyan-600 p-3 text-white flex justify-around items-center mt-10 w-[1200px]">
       <div class="">
         <h3 class="truncate w-[200px]">https://shortn-link.netlify.app</h3>
       </div>

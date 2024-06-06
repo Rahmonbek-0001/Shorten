@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <header class="bg-gray-600 h-[80px] flex justify-around items-center">
+  <header class="bg-cyan-600 h-[80px] flex justify-around items-center">
     <!-- left -->
     <a href="" class="flex items-center">
       <img class="w-16" src="../../public/icons/logo.svg" alt="" />
@@ -22,7 +22,7 @@
         <div v-if="toggle"></div>
         <div
           v-else
-          class="bg-white px-5 h-[45px] flex items-center rounded-xl text-black font-bold text-xl duration-300 hover:bg-gray-300"
+          class="bg-white px-5 h-[45px] flex items-center rounded-xl text-black font-bold text-xl duration-300 hover:bg-cyan-300"
         >
           <router-link to="/login">Log out</router-link>
         </div>
