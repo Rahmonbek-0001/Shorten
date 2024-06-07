@@ -1,10 +1,9 @@
-import '/src/assets/main.css'
 import { createApp } from 'vue'
+import '/src/assets/main.css'
 import PrimeVue from 'primevue/config'
 import App from '/src/App.vue'
-import router from '/src/router'
+import router from '/src/router/index.js'
 import { createPinia } from 'pinia'
-
 const pinia = createPinia()
 const app = createApp(App)
 

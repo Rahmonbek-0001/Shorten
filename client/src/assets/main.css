@@ -3,6 +3,6 @@
 @tailwind utilities;
 
 .logininput {
-    @apply w-96 rounded-md p-1 px-5 text-lg placeholder:text-black my-2;
-    outline: none;
+  @apply placeholder:text-gray-400 w-96 rounded-md p-1 px-5 text-lg my-2;
+  outline: none;
 }

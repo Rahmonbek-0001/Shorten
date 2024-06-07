@@ -13,13 +13,13 @@ const handleLogin = async (data) => {
       },
       body: JSON.stringify(user)
     })
-    const {message,user} = await response.json()
-   
+    const { message, user } = await response.json()
+
     if (response.status === 201) {
-      // 
-      console.log('Success');
+      //
+      console.log('Success')
     }
-    console.log();
+    console.log()
   } catch (error) {
     console.log(error)
   }
@@ -52,7 +52,7 @@ const handleLogin = async (data) => {
           <ErrorMessage name="password" />
         </div>
         <div class="flex justify-end items-center">
-          <button 
+          <button
             type="submit"
             class="bg-white p-2 px-10 rounded-md duration-300 hover:bg-gray-300"
           >

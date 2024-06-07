@@ -1,6 +1,6 @@
 {
   "name": "r",
-  "version": "0.0.0",
+  "version": "1.21.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -16,7 +16,8 @@
     "vee-validate": "^4.12.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
-    "zod": "^3.24.0-canary.20240502T210128"
+    "zod": "^3.24.0-canary.20240502T210128",
+    "express":"4.19.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",
