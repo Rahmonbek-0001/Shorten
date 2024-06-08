@@ -22,6 +22,10 @@
       <div class="">
         <button><img class="w-[35px]" src="../../public/icons/delete.svg" alt="delete" /></button>
       </div>
+    <div id="output">
+    </div>
     </div>
   </div>
 </template>
+
+<script></script>

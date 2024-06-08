@@ -4,20 +4,19 @@
       class="bg-cyan-600 p-5 w-[700px] mt-10 rounded-md h-[200px] grid items-center justify-center text-center"
     >
       <h2 class="text-3xl font-semibold text-white">Generate short link</h2>
-      <div class="flex w-[550px]">
+      <form id="add-link-form" class="flex w-[550px]">
         <input
           class="text-xl w-3/4 h-10 px-5 outline-none rounded-tl-xl rounded-bl-xl"
           type="text"
           placeholder="Enter link"
         />
-        <router-link to="/" class="h-10"
-          ><button
-            class="w-[150px] text-2xl h-full bg-cyan-800 hover:bg-cyan-500 duration-1000 text-white rounded-tr-xl rounded-br-xl"
-          >
-            Generate
-          </button></router-link
+        <button
+          id="get-posts-btn"
+          class="w-[150px] text-2xl h-10 bg-cyan-800 hover:bg-cyan-500 duration-1000 text-white rounded-tr-xl rounded-br-xl"
         >
-      </div>
+          Generate
+        </button>
+      </form>
     </div>
     <router-link
       to="/"
