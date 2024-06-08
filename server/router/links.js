@@ -1,7 +1,7 @@
 import express from 'express'
 import {
   getLink,
-  getLinks,
+  getLinks, 
   createLink,
   updateLink,
   deleteLink
