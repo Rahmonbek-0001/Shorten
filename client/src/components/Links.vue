@@ -19,10 +19,9 @@
         <h3>42</h3>
         <img class="w-[35px]" src="/icons/eyes.svg" alt="eye-icon" />
       </div>
+      <div class="">
+        <button><img class="w-[35px]" src="../../public/icons/delete.svg" alt="delete" /></button>
+      </div>
     </div>
   </div>
 </template>
-
-<script setup>
-defineProps(['link'])
-</script>

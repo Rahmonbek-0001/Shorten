@@ -5,7 +5,7 @@ import {
   createLink,
   updateLink,
   deleteLink
-} from '../controllers/postController.js'
+} from '../controllers/linkController.js'
 const router = express.Router()
 
 //Get all posts
