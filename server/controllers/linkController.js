@@ -1,18 +1,17 @@
   let links = [
-  {
-    id: 1,
-    realLink: 'https://www.google.com/',
-    shortLink: 'https://shorten-link-gii1.onrender.com/t/zPfuCFAEp'
-  },
-  {
-    id: 2,
-    title: 'Two post'
-  },
-  {
-    id: 3,
-    title: 'Three post'
-  }
-]
+    {
+      id: 1,
+      title: "One post",
+    },
+    {
+      id: 2,
+      title: "Two post",
+    },
+    {
+      id: 3,
+      title: "Three post",
+    },
+  ];
 
 // @desc Get all links
 // @route GET api/links

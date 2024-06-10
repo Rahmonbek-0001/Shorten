@@ -11,7 +11,6 @@
           placeholder="Enter link"
         />
         <button
-          id="get-posts-btn"
           class="w-[150px] text-2xl h-10 bg-cyan-800 hover:bg-cyan-500 duration-1000 text-white rounded-tr-xl rounded-br-xl"
         >
           Generate

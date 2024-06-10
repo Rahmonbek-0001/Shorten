@@ -6,9 +6,7 @@
         <h3 class="truncate w-[200px]">https://shortn-link.netlify.app</h3>
       </div>
       <div class="flex items-center">
-        <a href="https://shorten-link-gii1.onrender.com/t/02QM64kXX"
-          >https://shorten-link-gii1.onrender.com/t/02QM64kXX</a
-        >
+        <a id="output" href="https://shorten-link-gii1.onrender.com/t/02QM64kXX"></a>
         <div>
           <button @click="copyText()">
             <img class="w-[35px]" src="../../public/icons/copy-icon.svg" alt="copy-icon" />
@@ -22,10 +20,8 @@
       <div class="">
         <button><img class="w-[35px]" src="../../public/icons/delete.svg" alt="delete" /></button>
       </div>
-    <div id="output">
-    </div>
     </div>
   </div>
 </template>
 
-<script></script>
+<script setup></script>

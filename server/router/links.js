@@ -1,30 +1,31 @@
-import express from 'express'
+import express from "express";
 import {
   getLink,
-  getLinks, 
+  getLinks,
   createLink,
   updateLink,
-  deleteLink
-} from '../controllers/linkController.js'
-const router = express.Router()
+  deleteLink,
+} from "../controllers/linkController.js";
+const router = express.Router();
 
 //Get all posts
 
-router.get('/', getLink)
+router.get("/", getLink);
 
 // Get single post
 
-router.get('/:id', getLinks)
+router.get("/:id", getLinks);
 
 // Crate new posts
 
-router.post('/', createLink)
+router.post("/", createLink);
 
 // Update Post
-router.put('/:id', updateLink)
+router.put("/:id", updateLink);
 
 //Delete post
 
-router.delete('/:id', deleteLink)
+router.delete("/:id", deleteLink);
 
-export default router
+
+export default router;
