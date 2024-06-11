@@ -1,10 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <header class="bg-cyan-600 h-[80px] flex justify-around items-center">
+  <header class="bg-gray-400 h-[80px] min-[500px]:w-[850px] sm:w-[750px] md:w-[100vw] flex justify-around items-center mx-auto">
     <!-- left -->
     <a href="" class="flex items-center">
-      <img class="w-16" src="../../public/icons/logo.svg" alt="" />
-
+      <img class="w-16" src="../../public/icons/logo.svg" alt="logo" />
       <h3 class="text-white text-xl font-semibold -ml-3">Shorten link</h3>
     </a>
     <!-- center -->
@@ -22,7 +21,7 @@
         <div v-if="toggle"></div>
         <div
           v-else
-          class="bg-white px-5 h-[45px] flex items-center rounded-xl text-black font-bold text-xl duration-300 hover:bg-cyan-300"
+          class="bg-white px-5 h-[45px] flex items-center rounded-xl text-black font-bold text-xl duration-300 hover:bg-gray-300"
         >
           <router-link to="/login">Log out</router-link>
         </div>

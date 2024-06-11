@@ -10,7 +10,7 @@ async function showPosts() {
       throw new Error('Failed to fetch posts')
     }
 
-    const posts = await res.json() 
+    const posts = await res.json()
     output.innerHTML = ''
 
     posts.forEach((post) => {

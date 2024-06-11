@@ -1,7 +1,7 @@
 <template>
   <section class="flex justify-center">
     <div
-      class="bg-cyan-600 p-5 w-[700px] mt-10 rounded-md h-[200px] grid items-center justify-center text-center"
+      class="bg-gray-400 p-5 w-[700px] mt-10 rounded-md h-[200px] grid items-center justify-center text-center"
     >
       <h2 class="text-3xl font-semibold text-white">Generate short link</h2>
       <form id="add-link-form" class="flex w-[550px]">
@@ -11,7 +11,7 @@
           placeholder="Enter link"
         />
         <button
-          class="w-[150px] text-2xl h-10 bg-cyan-800 hover:bg-cyan-500 duration-1000 text-white rounded-tr-xl rounded-br-xl"
+          class="w-[150px] text-2xl h-10 bg-gray-700 hover:bg-gray-500 duration-1000 text-white rounded-tr-xl rounded-br-xl"
         >
           Generate
         </button>
@@ -21,7 +21,7 @@
       to="/"
       class="btn bg-red-600 p-5 w-16 h-16 flex justify-center items-center rounded-full fixed right-10 bottom-10 hover:bg-red-700 duration-1000 hover:animate-spin"
     >
-      <h2 class="text-4xl -mt-2">+</h2>
+      <h2 class="text-4xl -mt-2 text-white">+</h2>
     </router-link>
   </section>
 </template>
