@@ -1,3 +1,5 @@
-import express from "express"
-import { signUp } from "../controllers/user.js"
-import { login } from "../controllers/user.js"
+import { Router } from "express";
+import { signUp, login } from "../controllers/user.js";
+export const authRouter = Router();
+
+authRouter.post("/", signUp);
