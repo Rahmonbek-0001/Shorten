@@ -32,7 +32,9 @@ export const signUp = async (req, res) => {
       token,
       user: newUser,
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const login = (req, res) => {
