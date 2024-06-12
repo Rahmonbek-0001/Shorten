@@ -2,7 +2,9 @@ import bcrypt from "bcrypt";
 import Users from "../models/users.js";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
+
 dotenv.config();
+
 export const signUp = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -32,7 +34,9 @@ export const signUp = async (req, res) => {
       token,
       user: newUser,
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const login = (req, res) => {

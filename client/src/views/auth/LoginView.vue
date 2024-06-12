@@ -51,6 +51,7 @@ const handleLogin = async (data) => {
           />
           <ErrorMessage name="password" />
         </div>
+
         <div class="flex justify-end items-center">
           <button
             type="submit"
@@ -67,3 +68,9 @@ const handleLogin = async (data) => {
     </div>
   </section>
 </template>
+
+<style>
+.sdf {
+  columns: #008000;
+}
+</style>
