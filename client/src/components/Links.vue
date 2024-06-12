@@ -22,8 +22,9 @@
         <h3>42</h3>
         <img class="w-[35px]" src="/icons/eyes.svg" alt="eye-icon" />
       </div>
-      <div class="">
+      <div class="flex gap-2">
         <button><img class="w-[35px]" src="../../public/icons/delete.svg" alt="delete" /></button>
+        <button><img class="w-[40px]" src="../../public/icons/edit-2-svgrepo-com.svg" alt="delete" /></button>
       </div>
     </div>
   </div>
