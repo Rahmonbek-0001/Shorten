@@ -13,9 +13,7 @@ const app = express();
 
 // Body parser middleware
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-// setup static folder
+app.use(express.urlencoded({ extended: true }));
 
 // Router
 app.use("/api/auth", authRouter);
