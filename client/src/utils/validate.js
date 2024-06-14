@@ -1,6 +1,23 @@
-import { z } from 'zod'
+import * as zod from 'zod'
+import { toTypedSchema } from '@vee-validate/zod'
 
-export const loginSchema = z.object({
-  email: z.string().email({ message: 'Invalid email format' }), // Corrected the email validation message
-  password: z.string().min(6) // Ensured the password is a string with a minimum length of 6 characters
-})
+export const loginSchema = toTypedSchema(
+  zod.object({
+    email: zod.string().email('Must be valid email'),
+    password: zod.string().min(6, 'password must be at least 6 charecters')
+  })
+)
+export const registerSchema = toTypedSchema(
+  zod.object({
+    name: zod.string().nonempty('name is required'),
+    email: zod.string().email('Must be valid email'),
+    password: zod.string().min(6, 'password must be at least 6 charecters')
+  })
+)
+export const handleSubmit = async (data) => {
+  try {
+    console.log(data) 
+  } catch (error) {
+    console.error('Error submitting form:', error)
+  }
+}

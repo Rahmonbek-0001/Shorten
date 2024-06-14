@@ -1,6 +1,6 @@
 <script setup>
-import { Form, Field } from 'vee-validate'
-// import { registerSchema } from '@/utils/validate'
+import { Form, Field, ErrorMessage } from 'vee-validate'
+import { registerSchema, handleSubmit } from '../../utils/validate.js'
 </script>
 <template>
   <section class="grid justify-center items-center h-[100vh] text-center -mt-10">
@@ -13,16 +13,20 @@ import { Form, Field } from 'vee-validate'
         />
         <h2>Register</h2>
       </div>
-      <Form class="bg-gray-400 p-5 grid text-left rounded-lg -mb-9">
-        <div class="">
+      <Form
+        @submit="handleSubmit"
+        :validation-schema="registerSchema"
+        class="bg-gray-400 p-5 grid text-left rounded-lg -mb-9"
+      >
+        <div class="grid">
           <Field class="logininput" type="name" name="name" placeholder="Enter your name" />
           <ErrorMessage name="name" />
         </div>
-        <div class="">
+        <div class="grid">
           <Field class="logininput" type="email" name="email" placeholder="Enter your email" />
           <ErrorMessage name="email" />
         </div>
-        <div class="">
+        <div class="grid">
           <Field
             class="logininput"
             type="password"

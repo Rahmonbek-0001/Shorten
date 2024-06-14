@@ -1,29 +1,6 @@
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
-import { loginSchema } from '@/utils/validate'
-
-const handleLogin = async (data) => {
-  console.log(data)
-  const user = { email: 'test@gmail.com', password: 'test123' }
-  try {
-    const response = await fetch('', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json'
-      },
-      body: JSON.stringify(user)
-    })
-    const { message, user } = await response.json()
-
-    if (response.status === 201) {
-      //
-      console.log('Success')
-    }
-    console.log()
-  } catch (error) {
-    console.log(error)
-  }
-}
+import { loginSchema, handleSubmit } from '@/utils/validate'
 </script>
 
 <template>
@@ -34,22 +11,22 @@ const handleLogin = async (data) => {
         <h2 class="text-gray-500">Login Page</h2>
       </div>
       <Form
-        @submit.prevent="handleLogin"
-        class="bg-gray-400 flex flex-col gap-4 p-5 text-left rounded-lg -mb-9"
+        @submit="handleSubmit"
         :validation-schema="loginSchema"
+        class="bg-gray-400 flex flex-col gap-4 p-5 text-left rounded-lg -mb-9"
       >
-        <div>
+        <div class="grid">
           <Field name="email" type="email" class="logininput" placeholder="Enter Your Email" />
-          <ErrorMessage name="email" />
+          <ErrorMessage class="text-red-500 font-semibold" name="email" />
         </div>
-        <div>
+        <div class="grid">
           <Field
             name="password"
             type="password"
             class="logininput"
             placeholder="Enter Your Password"
           />
-          <ErrorMessage name="password" />
+          <ErrorMessage class="text-red-500 font-semibold" name="password" />
         </div>
 
         <div class="flex justify-end items-center">
