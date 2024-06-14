@@ -1,8 +1,5 @@
 <script setup>
 import { Form, Field } from 'vee-validate'
-import { ref } from 'vue'
-import Password from 'primevue/password'
-const value = ref(false)
 // import { registerSchema } from '@/utils/validate'
 </script>
 <template>
@@ -18,18 +15,17 @@ const value = ref(false)
       </div>
       <Form class="bg-gray-400 p-5 grid text-left rounded-lg -mb-9">
         <div class="">
-          <Field class="logininput" type="email" name="name" placeholder="Enter your name" />
-          <ErrorMessage name="password" />
+          <Field class="logininput" type="name" name="name" placeholder="Enter your name" />
+          <ErrorMessage name="name" />
         </div>
         <div class="">
           <Field class="logininput" type="email" name="email" placeholder="Enter your email" />
-          <ErrorMessage name="password" />
+          <ErrorMessage name="email" />
         </div>
         <div class="">
-          <Password
-            class="logininput placeholder:text-gray-400 rounded-md p-1 px-5 text-lg my-2 bg-white outline-none"
-            v-model="value"
-            toggleMask
+          <Field
+            class="logininput"
+            type="password"
             name="password"
             placeholder="Enter your password"
           />

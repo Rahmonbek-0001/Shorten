@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div class="flex justify-center mt-10">
+  <div class="flex justify-center mt-10 relative">
     <div class="bg-gray-400 p-3 text-white flex justify-around items-center mt-10 w-[1200px]">
       <div class="">
         <h3 class="truncate w-[200px]">https://shortn-link.netlify.app</h3>

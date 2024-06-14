@@ -6,3 +6,9 @@
   @apply placeholder:text-gray-400 w-96 rounded-md p-1 px-5 text-lg my-2;
   outline: none;
 }
+
+.bg-scissors {
+  width: 1800px;
+  height: 1000px;
+  background-image: url(../../public/icons/shorten.png);
+}
