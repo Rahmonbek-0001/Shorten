@@ -41,6 +41,6 @@ export const signUp = async (req, res) => {
 
 export const login = (req, res) => {
   try {
-    const { email, password } = req.body;
+    const { name, password } = req.body;
   } catch (error) {}
 };

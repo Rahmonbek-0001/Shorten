@@ -17,7 +17,7 @@
           <img
             class="w-16"
             src="../../public/icons/profile-user-avatar-man-person-svgrepo-com.svg"
-            alt=""
+            alt="" 
           />
         </button>
         <div v-if="toggle"></div>
