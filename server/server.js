@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import links from "./router/links.js";
 import authRouter from "./router/user.js";
 // import logger from "./middleware/logger.js";
+import cors from "cors"
 import errorHandler from "./middleware/error.js";
 import notFound from "./middleware/notFound.js";
 import { connectDataBase } from "./db/db.js";
@@ -13,6 +14,7 @@ const app = express();
 
 // Body parser middleware
 app.use(express.json());
+app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 
 // Router

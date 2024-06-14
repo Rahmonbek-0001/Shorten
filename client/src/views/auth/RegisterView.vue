@@ -1,6 +1,13 @@
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
-import { registerSchema, handleSubmit } from '../../utils/validate.js'
+import { registerSchema } from '../../utils/validate.js'
+const handleSubmit = async (data) => {
+  try {
+    console.log(data)
+  } catch (error) {
+    console.error('Error submitting form:', error)
+  }
+}
 </script>
 <template>
   <section class="grid justify-center items-center h-[100vh] text-center -mt-10">

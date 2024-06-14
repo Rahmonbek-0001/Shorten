@@ -14,10 +14,3 @@ export const registerSchema = toTypedSchema(
     password: zod.string().min(6, 'password must be at least 6 charecters')
   })
 )
-export const handleSubmit = async (data) => {
-  try {
-    console.log(data)
-  } catch (error) {
-    console.error('Error submitting form:', error)
-  }
-}
