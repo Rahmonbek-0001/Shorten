@@ -16,7 +16,7 @@ export const registerSchema = toTypedSchema(
 )
 export const handleSubmit = async (data) => {
   try {
-    console.log(data) 
+    console.log(data)
   } catch (error) {
     console.error('Error submitting form:', error)
   }
