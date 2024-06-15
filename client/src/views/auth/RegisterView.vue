@@ -1,6 +1,25 @@
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
+<<<<<<< Updated upstream
 import { registerSchema, handleSubmit } from '../../utils/validate.js'
+=======
+import { registerSchema } from '@/utils/validate';
+const handleSubmit = async (data) => {
+  try {
+    const response = await fetch(`${import.meta.env.VITE_API_URL}api/auth/register`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+    const resData = await response.json()
+    console.log(resData)
+  } catch (error) {
+    console.error('Error submitting form:', error)
+  }
+}
+>>>>>>> Stashed changes
 </script>
 <template>
   <section class="grid justify-center items-center h-[100vh] text-center -mt-10">
@@ -20,11 +39,11 @@ import { registerSchema, handleSubmit } from '../../utils/validate.js'
       >
         <div class="grid">
           <Field class="logininput" type="name" name="name" placeholder="Enter your name" />
-          <ErrorMessage name="name" />
+          <ErrorMessage class="text-red-500 font-semibold" name="name" />
         </div>
         <div class="grid">
           <Field class="logininput" type="email" name="email" placeholder="Enter your email" />
-          <ErrorMessage name="email" />
+          <ErrorMessage class="text-red-500 font-semibold" name="email" />
         </div>
         <div class="grid">
           <Field
@@ -33,7 +52,7 @@ import { registerSchema, handleSubmit } from '../../utils/validate.js'
             name="password"
             placeholder="Enter your password"
           />
-          <ErrorMessage name="password" />
+          <ErrorMessage class="text-red-500 font-semibold" name="password" />
         </div>
 
         <br />

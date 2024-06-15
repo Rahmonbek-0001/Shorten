@@ -6,7 +6,7 @@ dotenv.config();
 export const connectDataBase = async () => {
   try {
     await connect(process.env.mongodb_key);
-    console.log("database connect");
+    console.log("database connected");
   } catch (error) {
     console.log(error);
     process.exit();
