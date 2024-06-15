@@ -1,9 +1,6 @@
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
-<<<<<<< Updated upstream
-import { registerSchema, handleSubmit } from '../../utils/validate.js'
-=======
-import { registerSchema } from '@/utils/validate';
+import { registerSchema } from '../../utils/validate.js'
 const handleSubmit = async (data) => {
   try {
     const response = await fetch(`${import.meta.env.VITE_API_URL}api/auth/register`, {
@@ -19,7 +16,6 @@ const handleSubmit = async (data) => {
     console.error('Error submitting form:', error)
   }
 }
->>>>>>> Stashed changes
 </script>
 <template>
   <section class="grid justify-center items-center h-[100vh] text-center -mt-10">
@@ -47,8 +43,8 @@ const handleSubmit = async (data) => {
         </div>
         <div class="grid">
           <Field
-            class="logininput"
             type="password"
+            class="logininput"
             name="password"
             placeholder="Enter your password"
           />

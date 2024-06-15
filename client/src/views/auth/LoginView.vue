@@ -1,9 +1,6 @@
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
-<<<<<<< Updated upstream
-import { loginSchema, handleSubmit } from '@/utils/validate'
-=======
-import { loginSchema } from '@/utils/validate'
+import { loginSchema } from '../../utils/validate'
 const handleSubmit = async (data) => {
   try {
     const response = await fetch(`${import.meta.env.VITE_API_URL}api/auth/login`, {
@@ -19,7 +16,6 @@ const handleSubmit = async (data) => {
     console.error('Error submitting form:', error)
   }
 }
->>>>>>> Stashed changes
 </script>
 
 <template>
