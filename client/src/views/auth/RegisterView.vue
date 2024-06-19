@@ -1,6 +1,6 @@
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
-import { registerSchema } from '../../utils/validate.js'
+import { registerSchema } from '@/utils/validate.js'
 const handleSubmit = async (data) => {
   try {
     const response = await fetch(`${import.meta.env.VITE_API_URL}api/auth/register`, {
@@ -21,11 +21,7 @@ const handleSubmit = async (data) => {
   <section class="grid justify-center items-center h-[100vh] text-center -mt-10">
     <div class="grid gap-10">
       <div class="text-3xl font-bold grid justify-center text-center gap-5 text-gray-500">
-        <img
-          class="w-[150px] bg-gray-300 rounded-full p-5"
-          src="../../../public/icons/favicon.svg "
-          alt=""
-        />
+        <img class="w-[150px] bg-gray-300 rounded-full p-5" src="/icons/favicon.svg " alt="" />
         <h2>Register</h2>
       </div>
       <Form
