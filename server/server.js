@@ -10,7 +10,6 @@ dotenv.config();
 const PORT = process.env.PORT || 8000;
 
 const app = express();
-
 // Body parser middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
