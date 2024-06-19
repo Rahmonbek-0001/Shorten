@@ -1,6 +1,9 @@
-export default function auth({ next, router }) {
-  console.log(next)
-  console.log(router)
-
-  return next()
+import { useUserStore } from '@/store/user'
+export default function auth(to, from, next) {
+  const store = useUserStore()
+  store.loadUser()
+  if (store.user) {
+    return next()
+  }
+  return next('/login')
 }
