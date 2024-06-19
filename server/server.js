@@ -7,7 +7,6 @@ import cors from "cors"
 import errorHandler from "./middleware/error.js";
 import notFound from "./middleware/notFound.js";
 import { connectDataBase } from "./db/db.js";
-import cors from "cors"
 dotenv.config();
 const PORT = process.env.PORT || 8000;
 
@@ -15,7 +14,6 @@ const app = express();
 
 // Body parser middleware
 app.use(express.json());
-app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin:"*"
