@@ -12,8 +12,10 @@
   },
   "dependencies": {
     "@vee-validate/zod": "^4.13.1",
+    "cors": "^2.8.5",
     "express": "4.19.2",
     "pinia": "^2.1.7",
+    "primevue": "^4.0.0-rc.2",
     "vee-validate": "^4.12.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",

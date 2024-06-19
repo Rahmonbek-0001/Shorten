@@ -3,7 +3,7 @@ import { Form, Field, ErrorMessage } from 'vee-validate'
 import { registerSchema } from '@/utils/validate.js'
 const handleSubmit = async (data) => {
   try {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}api/auth/register`, {
+    const response = await fetch(`${import.meta.VITE_API_URL}api/auth/register`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -46,7 +46,7 @@ const handleSubmit = async (data) => {
           />
           <ErrorMessage class="text-red-500 font-semibold" name="password" />
         </div>
-
+ 
         <br />
         <div class="flex justify-end items-center">
           <button

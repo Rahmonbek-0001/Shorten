@@ -1,6 +1,6 @@
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
-import { loginSchema } from '@/utils/validate'
+import { loginSchema } from '@/utils/validate.js'
 const handleSubmit = async (data) => {
   try {
     const response = await fetch(`${import.meta.env.VITE_API_URL}api/auth/login`, {
@@ -36,6 +36,7 @@ const handleSubmit = async (data) => {
         </div>
         <div class="grid">
           <Field
+            name="password"
             type="password"
             class="logininput"
             placeholder="Enter Your Password"
