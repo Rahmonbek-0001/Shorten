@@ -1,32 +1,10 @@
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
-<<<<<<< Updated upstream
 import { loginSchema } from '@/utils/validate'
-const handleSubmit = async (data) => {
-  try {
-    const response = await fetch(`${import.meta.env.VITE_API_URL}api/auth/login`,{
-      method:"POST",
-      headers:{
-        "Content-Type":"application/json",
-      },
-      body:JSON.stringify(data)
-    })
-    const resData = await response.json() 
-    console.log(resData)
-  } catch (error) {
-    console.error('Error submitting form:', error)
-=======
-import { loginSchema } from '@/utils/validate.js'
-import { useUserStore } from '../../store/user'
-import { useRouter } from 'vue-router'
-const store = useUserStore()
-const router = useRouter()
-import { userLogin } from '../../api/auth'
 const handleSubmit = async (data) => {
   const { message, status, token, user } = await userLogin(data)
   if (status !== 200) {
     alert(message)
->>>>>>> Stashed changes
   }
   store.login({ ...user, token })
   router.push('/')
