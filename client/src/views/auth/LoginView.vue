@@ -1,20 +1,19 @@
 <script setup>
-import { loginSchema } from '@/utils/validate.js'
-import { useUserStore } from '@/store/user'
+import { Form, Field, ErrorMessage } from 'vee-validate'
+import { loginSchema } from '@/utils/validate'
+import { userLogin } from '../../api/auth'
+import { useUserStore } from '../../store/user'
 import { useRouter } from 'vue-router'
-import { userLogin } from '@/api/auth'
-
 const store = useUserStore()
 const router = useRouter()
-
 const handleSubmit = async (data) => {
   const { message, status, token, user } = await userLogin(data)
   if (status !== 200) {
     alert(message)
-    return
   }
   store.login({ ...user, token })
   router.push('/')
+  alert(message)
 }
 </script>
 

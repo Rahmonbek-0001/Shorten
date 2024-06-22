@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import auth from '@/middleware/auth'
+import auth from '@/middleware/auth.js'
 import CreateLink from '../components/CreateLink.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -9,12 +9,12 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
-      beforeEnter:auth
+      beforeEnter: auth
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('@/views/auth/LoginView.vue'),
+      component: () => import('@/views/auth/LoginView.vue')
     },
     {
       path: '/register',
