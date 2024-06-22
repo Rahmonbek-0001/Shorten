@@ -13,11 +13,11 @@
     <!-- right -->
     <div class="flex justify-center items-center text-white gap-3">
       <div class="flex items-center">
-        <button @click="toggle = !toggle">
+        <button @click="toggle = !toggle" :title="store.user.name">
           <img
             class="w-16"
             src="../../public/icons/profile-user-avatar-man-person-svgrepo-com.svg"
-            alt="" 
+            alt=""
           />
         </button>
         <div v-if="toggle"></div>
@@ -34,5 +34,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useUserStore } from '@/store/user'
 let toggle = ref(true)
+const store = useUserStore
 </script>

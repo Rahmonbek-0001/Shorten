@@ -8,10 +8,7 @@ dotenv.config();
 export const signUp = async (req, res) => {
   try {
     const { name, email, password } = req.body;
-    const user = await Users.find({
-      name,
-      email,
-    });
+    const user = await Users.find({ $or: [{ name }, { email }] });
     if (user?.length !== 0) {
       return res.status(401).json({ message: "User already registered" });
     }
