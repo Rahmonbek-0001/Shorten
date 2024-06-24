@@ -12,8 +12,8 @@
     <div class="text-white text-2xl font-semibold truncate w-auto">List of links</div>
     <!-- right -->
     <div class="flex justify-center items-center text-white gap-3">
-      <div class="flex items-center">
-        <button @click="toggle = !toggle" :title="store.user.name">
+      <div class="grid items-center">
+        <button @click="toggle = !toggle">
           <img
             class="w-16"
             src="../../public/icons/profile-user-avatar-man-person-svgrepo-com.svg"
@@ -23,9 +23,14 @@
         <div v-if="toggle"></div>
         <div
           v-else
-          class="bg-white px-5 h-[45px] flex items-center rounded-xl text-black font-bold text-xl duration-300 hover:bg-gray-300"
+          class="bg-white px-5 h-[45px] flex items-center fixed mt-[110px] -ml-[35px] rounded-xl text-black font-bold text-xl duration-300 hover:bg-gray-300"
+          :title="store.user.name"
         >
-          <router-link to="/login">Log out</router-link>
+          <div></div>
+          <div class="flex">
+            <img class="w-5" src="/icons/log_out.svg" alt="log out" />
+            <router-link to="/login"> Log out</router-link>
+          </div>
         </div>
       </div>
     </div>
