@@ -6,7 +6,7 @@ export const useUserStore = defineStore('user', () => {
 
   function login(newUser) {
     user.value = newUser
-    localStorage.setItem('user',JSON.stringify(newUser))
+    localStorage.setItem('user', JSON.stringify(newUser))
   }
   function logout() {
     user.value = null
@@ -14,7 +14,7 @@ export const useUserStore = defineStore('user', () => {
   }
   async function loadUser() {
     if (localStorage.getItem('user')) {
-      const storedUser = JSON.parse(localStorage.getItem('User'))
+      const storedUser = JSON.parse(localStorage.getItem('user'))
       user.value = storedUser
     }
   }
