@@ -6,7 +6,8 @@
     "type": "module",
     "scripts": {
         "start": "node server",
-        "dev": "nodemon node"
+        "client": "npm run dev --prefix client",
+        "dev": "concurrently \" nodemon server.js \" \"npm run client  \""
     },
     "keywords": [],
     "author": "",
@@ -19,7 +20,11 @@
         "jsonwebtoken": "^9.0.2",
         "mongodb": "^6.7.0",
         "mongoose": "^8.4.1",
-        "nodemon": "^3.1.4",
+        "nanoid": "^5.0.7",
         "path": "^0.12.7"
+    },
+    "devDependencies": {
+        "concurrently": "^8.2.2",
+        "nodemon": "^3.1.4"
     }
 }
