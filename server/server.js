@@ -6,7 +6,7 @@ import authRouter from "./router/user.js";
 import errorHandler from "./middleware/error.js";
 import notFound from "./middleware/notFound.js";
 import { connectDataBase } from "./db/db.js";
-import cors from 'cors'
+import cors from "cors";
 dotenv.config();
 const PORT = process.env.PORT || 8000;
 
@@ -16,9 +16,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Api Cors
-app.use(cors)
+app.use(cors({ origin: "*" }));
 
-// Router 
+// Router
 app.use("/api/auth", authRouter);
 app.use("/api/links", links);
 
