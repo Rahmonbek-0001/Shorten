@@ -4,6 +4,15 @@ import { loginSchema } from '@/utils/validate'
 import { userLogin } from '@/api/auth.js'
 import { useUserStore } from '@/store/user'
 import { useRouter } from 'vue-router'
+import { ref } from 'vue'
+
+const password = ref('')
+const showPassword = ref(false)
+
+function togglePasswordVisibility() {
+  showPassword.value = !showPassword.value
+}
+
 const store = useUserStore()
 const router = useRouter()
 const handleSubmit = async (data) => {
