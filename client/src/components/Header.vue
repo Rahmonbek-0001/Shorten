@@ -36,5 +36,5 @@
 import { ref } from 'vue'
 import { useUserStore } from '@/store/user'
 let toggle = ref(true)
-const store = useUserStore
+const store = useUserStore()
 </script>
