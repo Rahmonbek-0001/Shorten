@@ -1,20 +1,19 @@
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
 import { registerSchema } from '@/utils/validate.js'
+import { userRegister } from '@/api/auth'
+import { useUserStore } from '@/store/user'
+import { useRouter } from 'vue-router'
+const store = useUserStore()
+const router = useRouter()
 const handleSubmit = async (data) => {
-  try {
-    const response = await fetch(`${import.meta.VITE_API_URL}api/auth/register`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    })
-    const resData = await response.json()
-    console.log(resData)
-  } catch (error) {
-    console.error('Error submitting form:', error)
+  const { message, status, token, user } = await userRegister(data)
+  if (status !== 200) {
+    alert(message)
   }
+  store.login({ ...user, token })
+  router.push('/')
+  alert(message)
 }
 </script>
 <template>
@@ -46,7 +45,7 @@ const handleSubmit = async (data) => {
           />
           <ErrorMessage class="text-red-500 font-semibold" name="password" />
         </div>
- 
+
         <br />
         <div class="flex justify-end items-center">
           <button
