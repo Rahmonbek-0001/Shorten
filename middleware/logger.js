@@ -13,7 +13,7 @@ const logger = (req, res, next) => {
   console.log(
     `${req.methods} ${req.protocol}://${req.get("host")} ${req.originalUrl}`[
       color
-    ]
+    ] 
   );
   next();
 };

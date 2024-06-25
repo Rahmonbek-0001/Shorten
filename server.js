@@ -16,13 +16,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Api Cors
-app.use(cors());
+app.use(cors);
 
 // Router
 app.use("/api/auth", authRouter);
 app.use("/api/links", links);
 
-// Error hendler
+// Error hendler 
 app.use(notFound);
 app.use(errorHandler);
 

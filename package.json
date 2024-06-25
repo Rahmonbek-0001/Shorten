@@ -7,10 +7,10 @@
     "scripts": {
         "start": "node server",
         "client": "npm run dev --prefix client",
-        "dev": "concurrently \" nodemon server.js \" \"npm run client  \""
+        "dev": "concurrently \"nodemon node\" \"npm run client\""
     },
     "keywords": [],
-    "author": "",
+    "author": "", 
     "license": "ISC",
     "dependencies": {
         "@tanstack/vue-query": "^5.45.0",

@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const { jwt_secret } = process.env;
 export async function userMiddleware(req, res, next) {
-  if (res.method === "OPTIONS") {
+  if (res.method === "OPTIONS") { 
     return next();
   }
   try {

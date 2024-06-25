@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import useQuery from '@tanstack/vue-query'
+import { useQuery } from '@tanstack/vue-query'
 import { useUserStore } from '../store/user.js'
 import Link from './Link.vue'
 import { getAllLinks } from '../api/api.link.js'
