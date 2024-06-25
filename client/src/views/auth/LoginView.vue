@@ -65,7 +65,7 @@ const handleSubmit = async (data) => {
         <div class="flex justify-end items-center">
           <button
             type="submit"
-            class="bg-white p-2 px-10 rounded-md duration-300 hover:bg-gray-300 text-md font-semibold"
+            class="bg-white p-2 px-10 rounded-md duration-700 hover:bg-gray-300 text-md font-semibold"
           >
             Login
           </button>

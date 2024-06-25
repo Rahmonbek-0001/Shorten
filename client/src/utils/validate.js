@@ -6,7 +6,7 @@ export const loginSchema = toTypedSchema(
     email: zod.string().email('Must be valid email'),
     password: zod.string().min(6, 'password must be at least 6 charecters')
   })
-) 
+)
 export const registerSchema = toTypedSchema(
   zod.object({
     name: zod.string().nonempty('name is required'),

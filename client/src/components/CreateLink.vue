@@ -28,7 +28,7 @@
 
 <style scoped>
 .btn:hover {
-  box-shadow: 0px 0px 50px 50px rgb(160 20 20);
+  box-shadow: 0px 0px 15px 15px rgb(160 20 20);
 
   animation: spin 1s linear infinite;
 }

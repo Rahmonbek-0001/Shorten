@@ -5,7 +5,7 @@
   >
     <!-- left -->
     <a href="" class="flex items-center">
-      <img class="w-16" src="../../public/icons/logo.svg" alt="logo" />
+      <img class="w-16" src="/icons/logo.svg" alt="logo" />
       <h3 class="text-white text-xl font-semibold -ml-3">Shorten link</h3>
     </a>
     <!-- center -->
@@ -16,21 +16,20 @@
         <button @click="toggle = !toggle">
           <img
             class="w-16"
-            src="../../public/icons/profile-user-avatar-man-person-svgrepo-com.svg"
+            src="/icons/profile-user-avatar-man-person-svgrepo-com.svg"
             alt=""
           />
         </button>
         <div v-if="toggle"></div>
         <div
           v-else
-          class="bg-white px-5 h-[45px] flex items-center fixed mt-[110px] -ml-[35px] rounded-xl text-black font-bold text-xl duration-300 hover:bg-gray-300"
-          :title="store.user.name"
+          class="bg-white px-5 h-[45px] flex items-center fixed mt-[110px] -ml-[35px] rounded-md cursor-pointer text-black font-bold text-xl duration-300 hover:bg-gray-300"
+          :title="store?.user?.name"
         >
-          <div></div>
-          <div class="flex">
+          <button @click="logout" type="button" class="flex items-center gap-1">
             <img class="w-5" src="/icons/log_out.svg" alt="log out" />
-            <router-link to="/login"> Log out</router-link>
-          </div>
+            Log Out
+          </button>
         </div>
       </div>
     </div>
@@ -40,6 +39,12 @@
 <script setup>
 import { ref } from 'vue'
 import { useUserStore } from '@/store/user'
+import { useRouter } from 'vue-router'
 let toggle = ref(true)
 const store = useUserStore()
+const router = useRouter()
+const logout = () => {
+  store.logout()
+  router.push('login')
+}
 </script>
