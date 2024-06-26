@@ -16,9 +16,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Api Cors
-app.use(cors);
+app.use(cors({
+  origin:"*"
+}));
 
-// Router
+// Router 
 app.use("/api/auth", authRouter);
 app.use("/api/links", links);
 

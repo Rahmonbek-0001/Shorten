@@ -4,19 +4,17 @@
     <div class="">
       <h3 class="truncate w-[200px]">{{ link.linkFrom }}</h3>
     </div>
-    <div class="flex items-center">
+    <div class="flex items-center justify-center">
       <a
         id="output"
-        class="truncate w-[500px]"
+        class="truncate w-auto"
         href="https://shorten-link-gii1.onrender.com/t/02QM64kXX"
       >
         {{ link.linkTo }}
       </a>
-      <div>
-        <button type="button">
-          <img class="w-[35px]" src="/icons/copy-icon.svg" alt="copy-icon" />
-        </button>
-      </div>
+      <button type="button" title="Copy" class="">
+        <img class="w-[35px]" src="/icons/copy-icon.svg" alt="copy-icon" />
+      </button>
     </div>
     <div class="flex items-center">
       <h3>{{ link.clicks }}</h3>
@@ -37,7 +35,6 @@ const props = defineProps({
     type: Object
   }
 })
-
 {
   props
 }

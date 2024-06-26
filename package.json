@@ -10,7 +10,7 @@
         "dev": "concurrently \"nodemon node\" \"npm run client\""
     },
     "keywords": [],
-    "author": "", 
+    "author": "",
     "license": "ISC",
     "dependencies": {
         "@tanstack/vue-query": "^5.45.0",
@@ -20,7 +20,7 @@
         "express": "^4.19.2",
         "jsonwebtoken": "^9.0.2",
         "mongodb": "^6.7.0",
-        "mongoose": "^8.4.1",
+        "mongoose": "^8.4.3",
         "nanoid": "^5.0.7",
         "path": "^0.12.7"
     },

@@ -19,7 +19,7 @@
     </div>
     <router-link
       to="/"
-      class="btn bg-red-600 p-5 w-16 h-16 flex justify-center items-center rounded-full fixed right-10 bottom-10 hover:bg-red-700 duration-1000 hover:animate-spin"
+      class="btn bg-red-600 p-5 w-16 h-16 flex justify-center items-center rounded-full fixed right-10 bottom-10 duration-1000"
     >
       <h2 class="text-6xl pb-2 -mt-2 text-white">-</h2>
     </router-link>

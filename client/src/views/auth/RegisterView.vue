@@ -47,7 +47,7 @@ const handleSubmit = async (data) => {
           <ErrorMessage class="text-red-500 font-semibold" name="email" />
         </div>
         <div class="password-field">
-          <div >
+          <div>
             <Field
               :type="showPassword ? 'text' : 'password'"
               class="placeholder:text-gray-400 rounded-tl-md rounded-bl-md p-1 px-5 text-lg my-2 w-[344px] outline-none"
@@ -55,7 +55,11 @@ const handleSubmit = async (data) => {
               placeholder="Enter your password"
               v-model="password"
             />
-            <button type="button" class="toggle-password w-[40px] h-[36px] bg-gray-500 rounded-tr-md rounded-br-md" @click="togglePasswordVisibility">
+            <button
+              type="button"
+              class="toggle-password w-[40px] h-[36px] bg-gray-500 rounded-tr-md rounded-br-md"
+              @click="togglePasswordVisibility"
+            >
               <i :class="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }" class="fas"></i>
             </button>
           </div>
