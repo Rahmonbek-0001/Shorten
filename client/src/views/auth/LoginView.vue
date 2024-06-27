@@ -1,19 +1,44 @@
 <script setup>
 import { Form, Field, ErrorMessage } from 'vee-validate'
 import { loginSchema } from '@/utils/validate'
+<<<<<<< HEAD
 import {userLogin} from "../../api/auth"
 import { useUserStore } from '../../store/user'
 import { useRouter } from 'vue-router'
 const store = useUserStore()
 const router= useRouter()
+=======
+import { userLogin } from '@/api/auth.js'
+import { useUserStore } from '@/store/user'
+import { useRouter } from 'vue-router'
+import { ref } from 'vue'
+
+const password = ref('')
+const showPassword = ref(false)
+
+function togglePasswordVisibility() {
+  showPassword.value = !showPassword.value
+}
+
+const store = useUserStore()
+const router = useRouter()
+>>>>>>> 99d5452e8c544ed2c8cbc24abc571530ecd91bb7
 const handleSubmit = async (data) => {
   const { message, status, token, user } = await userLogin(data)
   if (status !== 200) {
     alert(message)
+<<<<<<< HEAD
   }
   store.login({ ...user, token })
   router.push('/')
   alert(message)
+=======
+  } else {
+    alert(message)
+  }
+  store.login({ ...user, token })
+  router.push('/')
+>>>>>>> 99d5452e8c544ed2c8cbc24abc571530ecd91bb7
 }
 </script>
 
@@ -27,26 +52,35 @@ const handleSubmit = async (data) => {
       <Form
         @submit="handleSubmit"
         :validation-schema="loginSchema"
-        class="bg-gray-400 flex flex-col gap-4 p-5 text-left rounded-lg -mb-9"
+        class="bg-gray-400 flex flex-col gap-2 p-5 text-left rounded-lg -mb-9"
       >
         <div class="grid">
           <Field name="email" type="email" class="logininput" placeholder="Enter Your Email" />
           <ErrorMessage class="text-red-500 font-semibold" name="email" />
         </div>
-        <div class="grid">
-          <Field
-            name="password"
-            type="password"
-            class="logininput"
-            placeholder="Enter Your Password"
-          />
+        <div class="password-field">
+          <div>
+            <Field
+              :type="showPassword ? 'text' : 'password'"
+              class="placeholder:text-gray-400 rounded-tl-md rounded-bl-md p-1 px-5 text-lg my-2 w-[344px] outline-none"
+              name="password"
+              placeholder="Enter your password"
+              v-model="password"
+            />
+            <button
+              type="button"
+              class="toggle-password w-[40px] h-[36px] bg-gray-500 rounded-tr-md rounded-br-md"
+              @click="togglePasswordVisibility"
+            >
+              <i :class="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }" class="fas"></i>
+            </button>
+          </div>
           <ErrorMessage class="text-red-500 font-semibold" name="password" />
         </div>
-
         <div class="flex justify-end items-center">
           <button
             type="submit"
-            class="bg-white p-2 px-10 rounded-md duration-300 hover:bg-gray-300"
+            class="bg-white p-2 px-10 rounded-md duration-300 hover:bg-gray-300 text-md font-semibold"
           >
             Login
           </button>
@@ -62,6 +96,6 @@ const handleSubmit = async (data) => {
 
 <style>
 .sdf {
-  columns: #008000;
+  color: #008000;
 }
 </style>

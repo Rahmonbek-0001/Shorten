@@ -11,10 +11,15 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "@tanstack/vue-query": "^5.45.0",
+    "@tanstack/vue-query-devtools": "^5.45.0",
     "@vee-validate/zod": "^4.13.1",
+    "cors": "^2.8.5",
     "express": "4.19.2",
     "pinia": "^2.1.7",
-    "primevue": "^3.52.0",
+    "primevue": "^4.0.0-rc.2",
     "vee-validate": "^4.12.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",

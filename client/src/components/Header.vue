@@ -12,20 +12,29 @@
     <div class="text-white text-2xl font-semibold truncate w-auto">List of links</div>
     <!-- right -->
     <div class="flex justify-center items-center text-white gap-3">
+<<<<<<< HEAD
       <div class="flex items-center">
         <button @click="toggle = !toggle" :title="store.user.email">
+=======
+      <div class="grid items-center">
+        <button @click="toggle = !toggle">
+>>>>>>> 99d5452e8c544ed2c8cbc24abc571530ecd91bb7
           <img
             class="w-16"
             src="../../public/icons/profile-user-avatar-man-person-svgrepo-com.svg"
-            alt="" 
+            alt=""
           />
         </button>
         <div v-if="toggle"></div>
         <div
           v-else
-          class="bg-white px-5 h-[45px] flex items-center rounded-xl text-black font-bold text-xl duration-300 hover:bg-gray-300"
+          class="bg-white px-5 h-[45px] flex items-center fixed mt-[110px] -ml-[35px] rounded-md cursor-pointer text-black font-bold text-xl duration-300 hover:bg-gray-300"
+          :title="store?.user?.name"
         >
-          <router-link to="/login">Log out</router-link>
+          <button @click="logout" type="button" class="flex items-center gap-1">
+            <img class="w-5" src="/icons/log_out.svg" alt="log out" />
+            Log Out
+          </button>
         </div>
       </div>
     </div>
@@ -34,7 +43,19 @@
 
 <script setup>
 import { ref } from 'vue'
+<<<<<<< HEAD
 import { useUserStore } from '../store/user'
 let toggle = ref(true)
 const store = useUserStore()
+=======
+import { useUserStore } from '@/store/user'
+import { useRouter } from 'vue-router'
+let toggle = ref(true)
+const store = useUserStore()
+const router = useRouter()
+const logout = () => {
+  store.logout()
+  router.push('login')
+}
+>>>>>>> 99d5452e8c544ed2c8cbc24abc571530ecd91bb7
 </script>

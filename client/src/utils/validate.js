@@ -6,7 +6,7 @@ export const loginSchema = toTypedSchema(
     email: zod.string().email('Must be valid email'),
     password: zod.string().min(6, 'password must be at least 6 charecters')
   })
-)
+) 
 export const registerSchema = toTypedSchema(
   zod.object({
     name: zod.string().nonempty('name is required'),
@@ -14,3 +14,12 @@ export const registerSchema = toTypedSchema(
     password: zod.string().min(6, 'password must be at least 6 charecters')
   })
 )
+<<<<<<< HEAD
+=======
+
+export const urlSchema = toTypedSchema(
+  zod.object({
+    url: zod.string().url()
+  })
+)
+>>>>>>> 99d5452e8c544ed2c8cbc24abc571530ecd91bb7
