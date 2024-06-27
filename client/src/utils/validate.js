@@ -14,3 +14,9 @@ export const registerSchema = toTypedSchema(
     password: zod.string().min(6, 'password must be at least 6 charecters')
   })
 )
+
+export const urlSchema = toTypedSchema(
+  zod.object({
+    url: zod.string().url()
+  })
+)

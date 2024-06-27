@@ -7,7 +7,11 @@
     "scripts": {
         "start": "node server",
         "client": "npm run dev --prefix client",
+<<<<<<< Updated upstream
         "dev": "concurrently \" nodemon server.js \" \"npm run client  \""
+=======
+        "dev": "concurrently \"nodemon server.js\" \"npm run client\""
+>>>>>>> Stashed changes
     },
     "keywords": [],
     "author": "",

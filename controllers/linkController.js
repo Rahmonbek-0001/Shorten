@@ -59,7 +59,8 @@ export const createLink = async (req, res, next) => {
   }
   const user = req.user;
   const userData = await Users.findOne({ name: user?.name });
-  if (userData) {
+  console.log(userData);
+  if (!userData) {
     const error = new Error(`User not found`);
     error.status = 400;
     return next(error);
@@ -81,7 +82,7 @@ export const createLink = async (req, res, next) => {
   });
   await newLink.save();
 
-  res.status(201).json({ newLink, message: "generated successfully" });
+  res.status(201).json({ message: "generated successfully" });
 };
 // @desc    Update links
 // @route   update api/links:id
