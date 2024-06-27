@@ -1,17 +1,17 @@
 <template>
   <section class="flex justify-center items-center h-[70vh]">
     <div
-      class="bg-gray-500 p-5 w-[700px] mt-10 rounded-md h-[200px] grid items-center justify-center text-center"
+      class="bg-gray-500 p-5 w-[700px] mt-20 rounded-md h-[200px] grid items-center justify-center text-center"
     >
       <h2 class="text-3xl font-semibold text-white">Generate short link</h2>
-      <form id="add-link-form" class="flex w-[550px]">
+      <form id="add-link-form" class="grid w-[700px] items-left justify-center gap-5 text-center">
         <input
-          class="text-xl w-3/4 h-10 px-5 outline-none rounded-tl-xl rounded-bl-xl"
+          class="text-xl w-[600px] h-10 px-5 outline-none rounded-md"
           type="text"
           placeholder="Enter link"
-        />
+        /> 
         <button
-          class="w-[150px] text-2xl h-10 bg-gray-700 hover:bg-gray-600 duration-1000 text-white rounded-tr-xl rounded-br-xl"
+          class="w-[150px] text-2xl h-10 bg-gray-700 hover:bg-gray-600 duration-1000 text-white rounded-md ml-[450px]"
         >
           Generate
         </button>

@@ -28,7 +28,7 @@ const handleSubmit = async (data) => {
 </script>
 
 <template>
-  <section class="grid justify-center items-center h-[100vh] text-center -mt-10 ">
+  <section class="grid justify-center items-center h-[100vh] text-center -mt-10">
     <div class="grid gap-10">
       <div class="text-3xl font-bold grid justify-center text-center gap-5 text-white">
         <img class="w-[150px] bg-gray-300 rounded-full p-5" src="/icons/favicon.svg" alt="" />

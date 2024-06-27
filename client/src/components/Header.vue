@@ -14,17 +14,12 @@
     <div class="flex justify-center items-center text-white gap-3">
       <div class="grid items-center">
         <button @click="toggle = !toggle">
-          <img
-            class="w-16"
-            src="/icons/profile-user-avatar-man-person-svgrepo-com.svg"
-            alt=""
-          />
+          <img class="w-16" src="/icons/profile-user-avatar-man-person-svgrepo-com.svg" alt="" />
         </button>
         <div v-if="toggle"></div>
         <div
           v-else
           class="bg-white px-5 h-[45px] flex items-center fixed mt-[110px] -ml-[35px] rounded-md cursor-pointer text-black font-bold text-xl duration-300 hover:bg-gray-300"
-          :title="store?.user?.name"
         >
           <button @click="logout" type="button" class="flex items-center gap-1">
             <img class="w-5" src="/icons/log_out.svg" alt="log out" />
