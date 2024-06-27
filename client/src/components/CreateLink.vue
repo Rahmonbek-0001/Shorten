@@ -7,8 +7,9 @@
       <form id="add-link-form" class="grid w-[700px] items-left justify-center gap-5 text-center">
         <input
           class="text-xl w-[600px] h-10 px-5 outline-none rounded-md"
-          type="text"
+          type="url"
           placeholder="Enter link"
+          required
         /> 
         <button
           class="w-[150px] text-2xl h-10 bg-gray-700 hover:bg-gray-600 duration-1000 text-white rounded-md ml-[450px]"
