@@ -26,16 +26,6 @@ const handleSubmit = async (data) => {
       class="bg-gray-500 p-5 w-[700px] mt-10 rounded-md h-[200px] grid items-center justify-center text-center"
     >
       <h2 class="text-3xl font-semibold text-white">Generate short link</h2>
-<<<<<<< Updated upstream
-      <form id="add-link-form" class="flex w-[550px]">
-        <input
-          class="text-xl w-3/4 h-10 px-5 outline-none rounded-tl-xl rounded-bl-xl"
-          type="text"
-          placeholder="Enter link"
-        />
-        <button
-          class="w-[150px] text-2xl h-10 bg-gray-700 hover:bg-gray-600 duration-1000 text-white rounded-tr-xl rounded-br-xl"
-=======
       <Form
         @submit="handleSubmit"
         :validation-schema="urlSchema"
@@ -53,7 +43,6 @@ const handleSubmit = async (data) => {
         <button
           :disabled="isPending"
           class="w-[150px] disabled:cursor-not-allowed text-2xl h-10 bg-gray-700 hover:bg-gray-600 duration-1000 text-white rounded-md ml-[450px]"
->>>>>>> Stashed changes
         >
           Generate
         </button>
