@@ -12,3 +12,8 @@
   height: 1000px;
   background-image: url(../../public/icons/shorten.png);
 }
+
+
+* {
+  outline-color: gray;
+}

@@ -26,10 +26,7 @@
         <button class="p-2 rounded-md hover:bg-gray-500 transition-colors" @click="handleDelete">
           <img class="w-[35px]" src="/icons/delete.svg" alt="delete" />
         </button>
-        <button
-          class="p-2 rounded-md hover:bg-gray-500 transition-colors edit-button"
-          @click="handleEdit"
-        >
+        <button class="p-2 rounded-md hover:bg-gray-500 transition-colors edit-button">
           <img class="w-[40px]" src="/icons/edit-2-svgrepo-com.svg" alt="edit" />
         </button>
       </div>
@@ -59,6 +56,7 @@ const copyToClipboard = (text) => {
     timerProgressBar: true,
     didOpen: (toast) => {
       toast.addEventListener('click', Swal.close)
+      toast.addEventListener('mouseenter', Swal.stopTimer)
     }
   })
 }
@@ -78,11 +76,8 @@ const handleDelete = () => {
     timerProgressBar: true,
     didOpen: (toast) => {
       toast.addEventListener('click', Swal.close)
+      toast.addEventListener('mouseover', Swal.stopTimer)
     }
   })
-}
-
-const handleEdit = () => {
-  // Add your edit functionality here
 }
 </script>
