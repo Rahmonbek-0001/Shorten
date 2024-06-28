@@ -16,9 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Api Cors
-app.use(cors({
-  origin:"*"
-}));
+app.use(cors());
 
 // Router 
 app.use("/api/auth", authRouter);

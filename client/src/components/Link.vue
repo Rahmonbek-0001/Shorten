@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <main class="bg-gray-400 p-3 text-white flex justify-between px-10 items-center mt-10 w-[1200px]">
+  <main class="bg-gray-400 p-3 text-white flex justify-between px-10 items-center mt-10 w-[1300px]">
     <div class="">
       <h3 class="truncate max-w-[200px] w-full">{{ link.linkFrom }}</h3>
     </div>

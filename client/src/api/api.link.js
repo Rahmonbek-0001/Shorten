@@ -13,3 +13,19 @@ export async function getAllLinks(token) {
   const links = await response.json()
   return links
 }
+export async function generateLink({ token, urlData }) {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}api/links`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      auth: `Bearer ${token}`
+    },
+    body: JSON.stringify(urlData)
+  })
+  if (response.status !== 201) {
+    const { message } = await response.json()
+    throw new Error(`${message} please try again`)
+  }
+  const { message } = await response.json()
+  return message
+}
