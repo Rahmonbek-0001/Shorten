@@ -37,7 +37,6 @@ export const createLink = async (req, res, next) => {
   }
   const user = req.user;
   const userData = await Users.findOne({ name: user?.name });
-  console.log(userData);
   if (!userData) {
     const error = new Error(`User not found`);
     error.status = 400;
@@ -78,13 +77,7 @@ export const updateLink = (req, res, next) => {
 // @desc    Delete links
 // @route   Delete api/links:id
 export const deleteLink = async (req, res, next) => {
-  const id = parseInt(req.params.id);
-  const link = links.find((link) => link.id === id);
-  if (!link) {
-    const error = new Error(`A post with the id of ${id} was not found`);
-    error.status = 404;
-    return next(error);
-  }
-  links = links.filter((link) => link.id !== id);
-  res.status(200).json(links);
+  const id = req.params.id;
+  await Links.findOneAndDelete({ _id: id });
+  res.status(200).json({ message: "link deleted successfully" });
 };

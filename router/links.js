@@ -22,6 +22,9 @@ router.post("/", userMiddleware, createLink);
 router.put("/:id", updateLink);
 
 //Delete post
-router.delete("/:id", deleteLink);
+router.delete("/:id", userMiddleware,  deleteLink);
+
+
+
 
 export default router;

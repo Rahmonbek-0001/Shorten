@@ -23,7 +23,10 @@
         <img class="w-[35px]" src="/icons/eyes.svg" alt="eye-icon" />
       </div>
       <div class="flex gap-2">
-        <button class="p-2 rounded-md hover:bg-gray-500 transition-colors" @click="handleDelete">
+        <button
+          class="p-2 rounded-md hover:bg-gray-500 transition-colors"
+          @click="handleDelete(link._id)"
+        >
           <img class="w-[35px]" src="/icons/delete.svg" alt="delete" />
         </button>
         <button class="p-2 rounded-md hover:bg-gray-500 transition-colors edit-button">
@@ -35,14 +38,19 @@
 </template>
 
 <script setup>
+import { useMutation,useQueryClient } from '@tanstack/vue-query'
+import { deleteLink } from '@/api/api.link';
 import Swal from 'sweetalert2'
+import { useUserStore } from '@/store/user';
+const queryClient = useQueryClient()
+
+const store= useUserStore()
 const props = defineProps({
   link: {
     type: Object,
     required: true
   }
 })
-
 const copyToClipboard = (text) => {
   navigator.clipboard.writeText(text)
   Swal.fire({
@@ -59,24 +67,37 @@ const copyToClipboard = (text) => {
     }
   })
 }
-
+const { mutateAsync } = useMutation({
+  mutationFn: deleteLink,
+  mutationKey: ['link'],
+  onSuccess: (message) => {
+    alert(message)
+    queryClient.invalidateQueries({queryKey:['links']})
+  },
+  onError: (error) => {
+    alert(error.message)
+  }
+})
 const handleCopy = () => {
   copyToClipboard(props.link.linkTo)
 }
-
-const handleDelete = () => {
-  Swal.fire({
-    title: 'Short link deleted!',
-    icon: 'error',
-    toast: true,
-    position: 'top-end',
-    showConfirmButton: false,
-    timer: 3000,
-    timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.addEventListener('click', Swal.close)
-      toast.addEventListener('mouseover', Swal.stopTimer)
-    }
-  })
+const handleDelete = async (linkId) => {
+  await mutateAsync({ token: store.user?.token, linkId })
 }
+
+// const handleDelete = () => {
+//   Swal.fire({
+//     title: 'Short link deleted!',
+//     icon: 'error',
+//     toast: true,
+//     position: 'top-end',
+//     showConfirmButton: false,
+//     timer: 3000,
+//     timerProgressBar: true,
+//     didOpen: (toast) => {
+//       toast.addEventListener('click', Swal.close)
+//       toast.addEventListener('mouseover', Swal.stopTimer)
+//     }
+//   })
+// }
 </script>

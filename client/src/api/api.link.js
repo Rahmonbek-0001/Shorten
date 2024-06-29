@@ -29,3 +29,17 @@ export async function generateLink({ token, urlData }) {
   const { message } = await response.json()
   return message
 }
+export async function deleteLink({ token, linkId }) {
+  const response = await fetch(`${import.meta.env.VITE_API_URL}api/links/${linkId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json',
+      auth: `Bearer ${token}`
+    }
+  })
+  if (response.status !== 200) {
+    throw new Error(`please try again`)
+  }
+  const { message } = await response.json()
+  return message
+}
