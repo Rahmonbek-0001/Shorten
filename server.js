@@ -5,7 +5,7 @@ import authRouter from "./router/user.js";
 // import logger from "./middleware/logger.js";
 import errorHandler from "./middleware/error.js";
 import notFound from "./middleware/notFound.js";
-import { connectDataBase } from "./db/db.js";
+import { connectDataBase } from "./db/db.js"; 
 import cors from "cors";
 dotenv.config();
 const PORT = process.env.PORT || 8000;

@@ -4,20 +4,6 @@ import Users from "../models/users.js";
 import { customAlphabet } from "nanoid";
 dotenv.config();
 const nanoid = customAlphabet("1234567890abcdefhijklmnopqrstuvyz", 10);
-let links = [
-  {
-    id: 1,
-    title: "One post",
-  },
-  {
-    id: 2,
-    title: "Two post",
-  },
-  {
-    id: 3,
-    title: "Three post",
-  },
-];
 // @desc Get all links
 // @route GET api/links
 export const getLinks = async (req, res) => {
@@ -91,7 +77,7 @@ export const updateLink = (req, res, next) => {
 };
 // @desc    Delete links
 // @route   Delete api/links:id
-export const deleteLink = (req, res, next) => {
+export const deleteLink = async (req, res, next) => {
   const id = parseInt(req.params.id);
   const link = links.find((link) => link.id === id);
   if (!link) {

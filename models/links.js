@@ -6,6 +6,7 @@ const linksSchema = new Schema({
   date: { type: Date, default: Date.now },
   clicks: { type: Number, required: true, default: 0 },
   owner: { type: Types.ObjectId, ref: "User", required: true },
+  
 });
 
 export const Links = model("Links", linksSchema);

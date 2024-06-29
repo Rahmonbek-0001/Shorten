@@ -36,7 +36,6 @@
 
 <script setup>
 import Swal from 'sweetalert2'
-
 const props = defineProps({
   link: {
     type: Object,

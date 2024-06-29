@@ -25,6 +25,7 @@ const handleSubmit = async (data) => {
   store.login({ ...user, token })
   router.push('/')
 }
+
 </script>
 
 <template>
