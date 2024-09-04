@@ -22,15 +22,12 @@
         <h3>{{ link.clicks }}</h3>
         <img class="w-[35px]" src="/icons/eyes.svg" alt="eye-icon" />
       </div>
-      <div class="flex gap-2">
+      <div class="">
         <button
           class="p-2 rounded-md hover:bg-gray-500 transition-colors"
           @click="handleDelete(link._id)"
         >
           <img class="w-[35px]" src="/icons/delete.svg" alt="delete" />
-        </button>
-        <button class="p-2 rounded-md hover:bg-gray-500 transition-colors edit-button">
-          <img class="w-[40px]" src="/icons/edit-2-svgrepo-com.svg" alt="edit" />
         </button>
       </div>
     </div>
@@ -38,13 +35,13 @@
 </template>
 
 <script setup>
-import { useMutation,useQueryClient } from '@tanstack/vue-query'
-import { deleteLink } from '@/api/api.link';
+import { useMutation, useQueryClient } from '@tanstack/vue-query'
+import { deleteLink } from '@/api/api.link'
 import Swal from 'sweetalert2'
-import { useUserStore } from '@/store/user';
+import { useUserStore } from '@/store/user'
 const queryClient = useQueryClient()
 
-const store= useUserStore()
+const store = useUserStore()
 const props = defineProps({
   link: {
     type: Object,
@@ -71,11 +68,11 @@ const { mutateAsync } = useMutation({
   mutationFn: deleteLink,
   mutationKey: ['link'],
   onSuccess: (message) => {
-    alert(message)
-    queryClient.invalidateQueries({queryKey:['links']})
+    console.log(message)
+    queryClient.invalidateQueries({ queryKey: ['links'] })
   },
   onError: (error) => {
-    alert(error.message)
+    console.log(error.message)
   }
 })
 const handleCopy = () => {
@@ -83,21 +80,18 @@ const handleCopy = () => {
 }
 const handleDelete = async (linkId) => {
   await mutateAsync({ token: store.user?.token, linkId })
+  Swal.fire({
+    title: 'Short link deleted!',
+    icon: 'error',
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('click', Swal.close)
+      toast.addEventListener('mouseover', Swal.stopTimer)
+    }
+  })
 }
-
-// const handleDelete = () => {
-//   Swal.fire({
-//     title: 'Short link deleted!',
-//     icon: 'error',
-//     toast: true,
-//     position: 'top-end',
-//     showConfirmButton: false,
-//     timer: 3000,
-//     timerProgressBar: true,
-//     didOpen: (toast) => {
-//       toast.addEventListener('click', Swal.close)
-//       toast.addEventListener('mouseover', Swal.stopTimer)
-//     }
-//   })
-// }
 </script>

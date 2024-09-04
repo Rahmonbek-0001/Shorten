@@ -7,7 +7,7 @@
   "scripts": {
     "start": "cross-env  NODE_ENV=production node server",
     "client": "npm run dev --prefix client",
-    "dev": "cross-env NODE_ENV=development  concurrently \" nodemon server.js \" \"npm run client  \""
+    "dev": "cross-env NODE_ENV=development concurrently \" nodemon server.js \" \"npm run client  \""
   },
   "keywords": [],
   "author": "",

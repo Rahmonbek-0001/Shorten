@@ -1,9 +1,9 @@
 <script setup>
 import { useMutation } from '@tanstack/vue-query'
 import { Form, Field, ErrorMessage } from 'vee-validate'
-import { generateLink } from '../api/api.link'
-import { useUserStore } from '../store/user'
-import { urlSchema } from '../utils/validate'
+import { generateLink } from '@/api/api.link'
+import { useUserStore } from '@/store/user'
+import { urlSchema } from '@/utils/validate'
 const { mutateAsync, isPending } = useMutation({
   mutationKey: ['newLinks'],
   mutationFn: generateLink,

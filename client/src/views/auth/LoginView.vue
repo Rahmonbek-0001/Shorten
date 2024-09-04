@@ -5,6 +5,7 @@ import { userLogin } from '@/api/auth.js'
 import { useUserStore } from '@/store/user'
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
+import Swal from 'sweetalert2'
 
 const password = ref('')
 const showPassword = ref(false)
@@ -15,17 +16,67 @@ function togglePasswordVisibility() {
 
 const store = useUserStore()
 const router = useRouter()
+
 const handleSubmit = async (data) => {
-  const { message, status, token, user } = await userLogin(data)
-  if (status !== 200) {
-    alert(message)
-  } else {
-    alert(message)
+  try {
+    const { status, token, user } = await userLogin(data)
+
+    if (status !== 200) {
+      // Login successful
+      showSuccessToast()
+      store.login({ ...user, token })
+      router.push('/')
+    } else {
+      // Login failed
+      Swal.fire({
+        title: 'Login Failed',
+        icon: 'error',
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('click', Swal.close)
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+        }
+      })
+    }
+    store.login({ ...user, token })
+    router.push('/')
+  } catch (error) {
+    // Handle error
+    Swal.fire({
+      icon: 'error',
+      text: 'An error occurred during login. Please try again later.',
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.addEventListener('click', Swal.close)
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+      }
+    })
   }
-  store.login({ ...user, token })
-  router.push('/')
 }
 
+const showSuccessToast = () => {
+  Swal.fire({
+    title: 'Login Successful',
+    icon: 'success',
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener('click', Swal.close)
+      toast.addEventListener('mouseenter', Swal.stopTimer)
+    }
+  })
+}
 </script>
 
 <template>
